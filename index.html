@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="description" content="Thrive: Learning to Watermark Speech Synthesis Against Model-Driven Reconstruction. Listen to Qwen3-TTS and Dots.tts watermarking examples." />
+    <title>Thrive · Generative Watermarking</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./styles-minimal.css" />
+    <script src="./app.js?v=20261001-remove-notes" defer></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="#top" aria-label="Thrive speech demo home">
+          Thrive <small>Watermarked Speech demo</small>
+        </a>
+      </header>
+      <main id="top">
+        <section class="hero" aria-labelledby="page-title">
+          <div class="hero-copy">
+            <!-- <p class="hero-method">Thrive</p> -->
+            <h1 id="page-title">Learning to Watermark Speech Synthesis Against Model-Driven Reconstruction</h1>
+          </div>
+          <nav class="dataset-switcher" aria-label="Evaluation dataset">
+            <a data-dataset-nav="ljspeech" href="./index.html" aria-current="page"><span>LJSpeech</span><small>Single-speaker English</small></a>
+            <a data-dataset-nav="libritts" href="./index.html?dataset=libritts"><span>LibriTTS</span><small>Multi-speaker English</small></a>
+            <a data-dataset-nav="aishell" href="./index.html?dataset=aishell"><span>AISHELL-3</span><small>Multi-speaker Chinese</small></a>
+          </nav>
+        </section>
+
+        <section id="experiment" class="listening-section" data-collection="experiment" aria-labelledby="experiment-title">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow dark" data-role="dataset-eyebrow">LJSpeech · ONE-SECOND EVALUATION SAMPLES</p>
+              <h2 id="experiment-title" data-role="experiment-title">LJSpeech Experimental examples</h2>
+              <!-- <p class="section-description" data-role="experiment-description">Five matched input texts, each synthesized by Qwen3-TTS and Dots.tts. For each model, all six baseline clips are watermarked from that model's own clean speech.</p> -->
+            </div>
+          </div>
+          <!-- <div class="source-map" aria-label="Evaluation sample source indices">
+            <div><span data-role="source-label">QWEN3-TTS · SOURCE INDICES</span><p data-role="source-indices">36 · 37 · 53 · 13 · 26</p></div>
+            <div><span>DOTS.TTS · MATCHED INPUT TEXT</span><p>Same five texts, in the same order</p></div>
+            <p data-role="source-note">Sample 01–05 use identical input text across models. The one-second crop may end at different words; their generated waveforms differ. Baselines use the selected model's clean carrier.</p>
+          </div> -->
+          <div class="control-panel">
+            <div class="control-block">
+              <span class="control-label">Speech model</span>
+              <div class="segmented" role="group" aria-label="Evaluation speech model">
+                <button type="button" data-model="qwen" aria-pressed="true"><span class="model-name">Qwen3-TTS</span><span class="model-description">Discrete-Token Autoregressive TTS</span></button>
+                <button type="button" data-model="dots" aria-pressed="false"><span class="model-name">Dots.tts</span><span class="model-description">Continuous-Representation Autoregressive TTS</span></button>
+              </div>
+            </div>
+            <div class="control-block prompt-block">
+              <span class="control-label">Evaluation sample</span>
+              <div class="prompt-tabs" role="group" aria-label="Evaluation sample">
+                <button type="button" data-sample="1" aria-pressed="true">Sample 01</button>
+                <button type="button" data-sample="2" aria-pressed="false">Sample 02</button>
+                <button type="button" data-sample="3" aria-pressed="false">Sample 03</button>
+                <button type="button" data-sample="4" aria-pressed="false">Sample 04</button>
+                <button type="button" data-sample="5" aria-pressed="false">Sample 05</button>
+              </div>
+            </div>
+          </div>
+          <div class="selection-banner" aria-live="polite">
+            <div>
+              <span class="selection-overline">NOW COMPARING <span data-role="selected-model">QWEN3-TTS</span> · EVALUATION SAMPLE <span data-role="selected-number">01</span></span>
+              <p data-role="selected-prompt">One-second evaluation speech</p>
+            </div>
+            <span data-role="selected-duration" class="duration-pill">1.00 s</span>
+          </div>
+          <div data-role="audio-layout-slot"></div>
+        </section>
+
+        <section id="custom" class="listening-section custom-section" data-collection="custom" data-ljspeech-only aria-labelledby="custom-title">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow dark">COMPLETE SPOKEN SENTENCES</p>
+              <h2 id="custom-title">Custom-prompt examples</h2>
+              <!-- <p class="section-description">Six complete source utterances in total: each of the three prompts is spoken independently by Qwen3-TTS and Dots.tts. The prompt text matches across models; the audio does not.</p> -->
+            </div>
+          </div>
+
+          <div class="control-panel">
+            <div class="control-block">
+              <span class="control-label">Speech model</span>
+              <div class="segmented" role="group" aria-label="Speech model">
+                <button type="button" data-model="qwen" aria-pressed="true"><span class="model-name">Qwen3-TTS</span><span class="model-description">Discrete-Token Autoregressive TTS</span></button>
+                <button type="button" data-model="dots" aria-pressed="false"><span class="model-name">Dots.tts</span><span class="model-description">Continuous-Representation Autoregressive TTS</span></button>
+              </div>
+            </div>
+            <div class="control-block prompt-block">
+              <span class="control-label">Evaluation sample</span>
+              <div class="prompt-tabs" role="group" aria-label="Custom-prompt evaluation sample">
+                <button type="button" data-sample="1" aria-pressed="true">Prompt 01</button>
+                <button type="button" data-sample="2" aria-pressed="false">Prompt 02</button>
+                <button type="button" data-sample="3" aria-pressed="false">Prompt 03</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="selection-banner" aria-live="polite">
+            <div>
+              <span class="selection-overline">NOW COMPARING <span data-role="selected-model">QWEN3-TTS</span> · PROMPT <span data-role="selected-number">01</span></span>
+              <p data-role="selected-prompt">“Generative Watermarking.”</p>
+            </div>
+            <span data-role="selected-duration" class="duration-pill">1.92 s</span>
+          </div>
+
+          <div class="audio-layout">
+            <aside class="reference-column">
+              <div class="column-heading"><span class="dot clean-dot"></span> START HERE</div>
+              <article class="audio-card reference-card">
+                <div class="card-top"><span class="method-index">REF</span><span class="method-type">Unwatermarked</span></div>
+                <h3>Clean speech</h3>
+                <p>The original generated utterance used as the input for every baseline in this comparison.</p>
+                <audio controls preload="none" data-audio="clean" aria-label="Play clean reference audio"></audio>
+                <a class="download-link" data-download="clean" href="./assets/qwen/sample_01/clean.wav" download>Download WAV <span aria-hidden="true">↗</span></a>
+              </article>
+            </aside>
+
+            <div class="methods-column">
+              <div class="column-heading"><span class="dot watermark-dot"></span> WATERMARKED OUTPUTS</div>
+              <article class="audio-card ours-card">
+                <div class="card-top"><span class="method-index">OUR METHOD</span><span class="method-type">Model-integrated</span></div>
+                <div class="card-title-row"><div><h3>Thrive</h3><p>Our method: watermark introduced during speech synthesis.</p></div><span class="featured-tag">OUR METHOD</span></div>
+                <audio controls preload="none" data-audio="ours" aria-label="Play our watermarked audio"></audio>
+                <a class="download-link" data-download="ours" href="./assets/qwen/sample_01/ours.wav" download>Download WAV <span aria-hidden="true">↗</span></a>
+              </article>
+
+              <div class="group-heading"><span>POST-HOC WATERMARKING</span><span>Applied to generated speech</span></div>
+              <div class="card-grid">
+                <article class="audio-card"><div class="card-top"><span class="method-index">01</span><span class="method-type">Post-hoc</span></div><h3>AudioSeal</h3><audio controls preload="none" data-audio="audioseal" aria-label="Play AudioSeal watermarked audio"></audio><a class="download-link" data-download="audioseal" href="./assets/qwen/sample_01/audioseal.wav" download>Download WAV <span aria-hidden="true">↗</span></a></article>
+                <article class="audio-card"><div class="card-top"><span class="method-index">02</span><span class="method-type">Post-hoc</span></div><h3>WavMark</h3><audio controls preload="none" data-audio="wavmark" aria-label="Play WavMark watermarked audio"></audio><a class="download-link" data-download="wavmark" href="./assets/qwen/sample_01/wavmark.wav" download>Download WAV <span aria-hidden="true">↗</span></a></article>
+                <article class="audio-card"><div class="card-top"><span class="method-index">03</span><span class="method-type">Post-hoc</span></div><h3>TBWM</h3><audio controls preload="none" data-audio="timbre" aria-label="Play TBWM watermarked audio"></audio><a class="download-link" data-download="timbre" href="./assets/qwen/sample_01/timbre.wav" download>Download WAV <span aria-hidden="true">↗</span></a></article>
+              </div>
+
+              <div class="group-heading"><span>GENERATIVE WATERMARKING BASELINES</span><span>Resynthesis-based methods</span></div>
+              <div class="card-grid">
+                <article class="audio-card"><div class="card-top"><span class="method-index">04</span><span class="method-type">Generative</span></div><h3>Groot</h3><audio controls preload="none" data-audio="groot" aria-label="Play Groot watermarked audio"></audio><a class="download-link" data-download="groot" href="./assets/qwen/sample_01/groot.wav" download>Download WAV <span aria-hidden="true">↗</span></a></article>
+                <article class="audio-card"><div class="card-top"><span class="method-index">05</span><span class="method-type">Generative</span></div><h3>RIWF</h3><audio controls preload="none" data-audio="riwf" aria-label="Play RIWF watermarked audio"></audio><a class="download-link" data-download="riwf" href="./assets/qwen/sample_01/riwf.wav" download>Download WAV <span aria-hidden="true">↗</span></a></article>
+                <article class="audio-card"><div class="card-top"><span class="method-index">06</span><span class="method-type">Generative</span></div><h3>HFGw</h3><audio controls preload="none" data-audio="hfgw" aria-label="Play HFGW watermarked audio"></audio><a class="download-link" data-download="hfgw" href="./assets/qwen/sample_01/hfgw.wav" download>Download WAV <span aria-hidden="true">↗</span></a></article>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </body>
+</html>
